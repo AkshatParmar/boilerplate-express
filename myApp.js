@@ -4,7 +4,10 @@ var app = express();
 // Challenge #1
 console.log("Hello World")
 
-// Pls work
+app.get("/", (req, res) => {
+	console.log("Yo");
+	res.send("Hello Express");
+})
 
 
 
