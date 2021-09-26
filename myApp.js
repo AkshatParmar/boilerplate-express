@@ -9,13 +9,12 @@ app.get("/", (req, res) => {
 })
 
 
-
-
-
-
-
-
-
+// Challenge #5
+app.get("/json", (req, res) => {
+	const result = new Object();
+	result["message"] = "Hello json";
+	res.json(result);
+});
 
 
 
