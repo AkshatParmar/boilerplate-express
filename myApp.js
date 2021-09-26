@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 	res.sendFile(__dirname + '/views/index.html');
 })
 
-// Challenge #5
+// Challenge #6
 app.get("/json", (req, res) => {
 	const result = new Object();
 	if (process.env.MESSAGE_STYLE == "uppercase" || process.env.MESSAGE_STYLE === "uppercase") {
