@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+require("dotenv").config();
 
 // Challenge #4
 // app.use(express.static(__dirname,"/public"));
@@ -14,7 +15,11 @@ app.get("/", (req, res) => {
 // Challenge #5
 app.get("/json", (req, res) => {
 	const result = new Object();
-	result["message"] = "Hello json";
+	if (process.env.MESSAGE_STYLE == "uppercase" || process.env.MESSAGE_STYLE === "uppercase") {
+		result["message"] = "HELLO JSON";
+	} else {
+		result["message"] = "Hello json";
+	}
 	res.json(result);
 });
 
