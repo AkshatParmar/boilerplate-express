@@ -6,7 +6,7 @@ console.log("Hello World")
 
 app.get("/", (req, res) => {
 	console.log("Yo");
-	res.send("Hello Express");
+	res.sendFile(__dirname + '/views/index.html');
 })
 
 
