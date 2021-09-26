@@ -1,11 +1,10 @@
 var express = require('express');
 var app = express();
 
-// Challenge #1
-console.log("Hello World")
+// Challenge #4
+app.use("/public", express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
-	console.log("Yo");
 	res.sendFile(__dirname + '/views/index.html');
 })
 
