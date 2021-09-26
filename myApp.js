@@ -7,6 +7,13 @@ require("dotenv").config();
 
 app.use("/public", express.static(__dirname + "/public"));
 
+// Challenge #7
+app.use("/", (req, res, next) => {
+	const result = (req.method).toString() + " " + (req.path).toString() + " - " + (req.ip).toString();
+	console.log(result);
+	next();
+});
+
 app.get("/", (req, res) => {
 	console.log(__dirname);
 	res.sendFile(__dirname + '/views/index.html');
