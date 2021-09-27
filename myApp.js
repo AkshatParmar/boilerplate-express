@@ -30,11 +30,16 @@ app.get("/json", (req, res) => {
 	res.json(result);
 });
 
-
-
-
-
-
+// Challenge #8
+app.get('/now', (req, res, next) => {
+	const time = new Object();
+	const a = new Date().toString();
+	time["time"] = a;
+	console.log(time);
+	next();
+}, (req, res) => {
+	res.json(time);
+})
 
 
 
