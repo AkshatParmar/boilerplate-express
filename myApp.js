@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 require("dotenv").config();
 
@@ -44,6 +45,15 @@ app.get('/now', (req, res, next) => {
 app.get('/:word/echo', (req,res) => {
 	res.json({
 		"echo": req.params.word
+	});
+});
+
+// Challenge #10
+app.get('/name', (req, res) => {
+	bodyParser.urlencoded({extended: false})
+	const result = req.query.first + " " + req.query.last;
+	res.json({
+		"name": result
 	});
 });
 
