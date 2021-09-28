@@ -50,13 +50,23 @@ app.get('/:word/echo', (req,res) => {
 
 // Challenge #10
 app.get('/name', (req, res) => {
-	bodyParser.urlencoded({extended: false})
 	const result = req.query.first + " " + req.query.last;
 	res.json({
 		"name": result
 	});
 });
 
+// Challenge #11
+app.use(bodyParser.urlencoded({extended: false}));
+
+// Challenge #12
+app.post('/name', (req, res) => {
+	const first = req.body.first;
+	const last = req.body.last;
+	res.json({
+		"name" : first + " " + last
+	});
+});
 
 
 
